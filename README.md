@@ -1,160 +1,199 @@
-# IBM HR Analytics – Employee Attrition Analysis Using SQL
+# 👥 IBM HR Analytics | Employee Attrition Analysis | SQL
 
-## 📌 Project Overview
-
-This project analyzes employee data from the IBM HR Analytics dataset using SQL.
-
-The objective is to explore employee attrition, demographics, job roles, income, job satisfaction, work experience, and other workforce-related factors to identify meaningful patterns and insights.
-
-The project demonstrates practical SQL skills used in data analyst roles, including data exploration, data cleaning, aggregation, filtering, subqueries, joins, CASE statements, window functions, and analytical queries.
+**Turning employee-level HR data into actionable workforce insights using SQL to understand attrition, compensation, experience, and employee characteristics.**
 
 ---
 
-## 🎯 Project Objectives
+## 📌 Business Problem
 
-- Analyze overall employee attrition.
-- Identify departments and job roles with higher attrition.
-- Analyze employee demographics.
-- Compare attrition across different age groups.
-- Analyze monthly income and job satisfaction.
-- Study the relationship between overtime and employee attrition.
-- Analyze years at company and employee experience.
-- Identify patterns that may help understand employee turnover.
+Organizations collect large amounts of employee data, but raw HR data alone does not clearly explain **where employee attrition is concentrated or which workforce groups show different attrition patterns**.
 
----
+HR teams need answers to questions such as:
 
-## 🗂️ Dataset
+* What is the overall employee attrition rate?
+* Which departments and job roles have higher attrition?
+* Is overtime associated with higher employee turnover?
+* How does income differ between employees who stay and those who leave?
+* Does employee tenure show different attrition patterns?
+* Which employee groups require further investigation?
 
-The project uses the **IBM HR Analytics Employee Attrition & Performance** dataset.
-
-The dataset contains employee-level information such as:
-
-- Age
-- Gender
-- Department
-- Job Role
-- Monthly Income
-- Job Satisfaction
-- Job Level
-- Years at Company
-- Years in Current Role
-- Years Since Last Promotion
-- Years With Current Manager
-- Overtime
-- Business Travel
-- Education
-- Marital Status
-- Attrition
+**This project uses SQL to transform raw employee data into structured workforce analysis that can support HR reporting and retention-focused investigation.**
 
 ---
 
-## 🛠️ Tools & Technologies
+## 🎯 What I Did
 
-- **SQL**
-- **MySQL / MariaDB**
-- **MySQL Workbench**
-- **GitHub**
+1. **Explored and validated the employee dataset** by checking employee records, table structure, NULL values, duplicates, and important field consistency.
 
----
+2. **Analyzed employee attrition** across departments, job roles, gender, age groups, overtime, income levels, and experience.
 
-## 🔍 SQL Analysis Performed
+3. **Performed salary and workforce analysis** using aggregate functions to compare income across departments and job roles.
 
-The project includes SQL queries for:
+4. **Analyzed employee experience** using years at company, years in current role, years since last promotion, and years with current manager.
 
-### 1. Data Exploration
-- View employee records.
-- Check table structure.
-- Count total employees.
-- Identify unique departments and job roles.
-
-### 2. Data Quality Checks
-- Check for NULL values.
-- Check duplicate records.
-- Validate important columns.
-- Review data consistency.
-
-### 3. Employee Attrition Analysis
-- Calculate overall attrition.
-- Compare attrition by department.
-- Analyze attrition by job role.
-- Compare attrition by gender.
-- Analyze attrition by age group.
-- Analyze attrition based on overtime.
-
-### 4. Salary & Income Analysis
-- Analyze monthly income.
-- Compare income across departments.
-- Analyze income by job role.
-- Identify employees with higher and lower income.
-
-### 5. Experience Analysis
-- Analyze years at company.
-- Analyze years in current role.
-- Analyze years since last promotion.
-- Analyze years with current manager.
-
-### 6. Advanced SQL Analysis
-The project also demonstrates:
-
-- `SELECT`
-- `WHERE`
-- `GROUP BY`
-- `HAVING`
-- `ORDER BY`
-- Aggregate functions
-- `CASE WHEN`
-- `COUNT`
-- `SUM`
-- `AVG`
-- `MIN`
-- `MAX`
-- Subqueries
-- Window functions
-- Ranking
-- Conditional aggregation
+5. **Applied advanced SQL techniques** including subqueries, joins, `CASE WHEN`, conditional aggregation, ranking, and window functions to answer business-focused questions.
 
 ---
 
-## 📊 Key Business Questions
+## 📊 Key Findings
 
-Some of the questions explored in this project include:
+The analysis identified several measurable patterns in the IBM HR dataset:
 
-1. What is the total number of employees?
-2. What percentage of employees have left the company?
-3. Which department has the highest employee attrition?
-4. Which job roles have higher attrition?
-5. How does overtime relate to employee attrition?
-6. How does attrition vary across different age groups?
-7. How does monthly income vary across departments?
-8. Which job roles have the highest average income?
-9. How does employee experience relate to attrition?
-10. Which employees have been with the company for the longest period?
-11. What is the average job satisfaction across departments?
-12. Which employee groups show higher attrition patterns?
+* **Overall attrition:** 237 of 1,470 employees were recorded as having left the organization, representing approximately **16.12% attrition**.
 
----
+* **Department variation:** Attrition patterns differed across departments, with Sales at **20.63%**, HR at **19.05%**, and Research & Development at **13.84%**.
 
-## 💡 Business Insights
+* **Overtime pattern:** Employees working overtime showed a **30.53% attrition rate**, compared with **10.44%** among employees not working overtime.
 
-The SQL analysis is designed to identify workforce patterns related to employee attrition.
+* **Income pattern:** Employees who left had a lower average monthly income (**4,787**) than employees who stayed (**6,833**) in the dataset.
 
-The analysis can help HR teams understand:
+* **Tenure pattern:** Employees with **0–2 years** at the company showed a higher attrition rate (**29.82%**) compared with employees with **11+ years** (**8.13%**).
 
-- Where employee turnover is concentrated.
-- Which job roles require further investigation.
-- Whether overtime is associated with different attrition patterns.
-- How employee experience varies across the organization.
-- How compensation differs across departments and roles.
-- Which employee groups may require additional HR attention.
+* **Job-role variation:** Attrition differed substantially across job roles. Sales Representatives recorded **39.76%**, while Research Directors recorded **2.50%** in the dataset.
 
-> Note: The SQL results represent patterns in the dataset and should not automatically be interpreted as causal relationships.
+* **Combined employee pattern:** Among employees with **low income and 0–2 years of tenure**, 61.54% were recorded as having left. This highlights a workforce segment that may warrant deeper investigation.
+
+> **Important:** These findings describe patterns and associations in the IBM HR dataset. They should not be interpreted as proof that any individual factor directly causes employee attrition.
 
 ---
 
-## 📁 Project Files
+## 🧭 Business Questions & How This Analysis Helps
+
+| Business Question                                            | SQL Analysis                                                            | Business Use                                                                          |
+| ------------------------------------------------------------ | ----------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| **What is the overall attrition rate?**                      | Calculated total employees, attrition count, and attrition percentage.  | Establishes a baseline metric for monitoring employee turnover.                       |
+| **Which departments have higher attrition?**                 | Grouped employees by department and calculated attrition rates.         | Helps HR identify departments requiring further retention analysis.                   |
+| **Which job roles show higher attrition?**                   | Compared attrition across individual job roles.                         | Helps identify roles where turnover patterns deserve further investigation.           |
+| **Is overtime associated with attrition?**                   | Compared attrition between overtime and non-overtime employees.         | Helps HR investigate whether workload patterns are associated with employee turnover. |
+| **How does income relate to attrition patterns?**            | Compared average and grouped income across attrition categories.        | Provides visibility into compensation patterns among employees who stayed or left.    |
+| **How does tenure relate to attrition?**                     | Created tenure groups and calculated attrition by experience level.     | Helps identify employee experience groups with different turnover patterns.           |
+| **Which roles have higher average income?**                  | Calculated average income by job role using aggregation.                | Helps HR understand compensation differences across roles.                            |
+| **How does job satisfaction vary?**                          | Compared satisfaction levels across departments and employee groups.    | Provides an additional workforce dimension for HR analysis.                           |
+| **Which employee groups show different attrition patterns?** | Combined income, tenure, overtime, department, and job-role attributes. | Helps HR identify workforce segments for deeper analysis.                             |
+| **How can multiple employee factors be analyzed together?**  | Used joins, subqueries, conditional aggregation, and window functions.  | Demonstrates how SQL can support multi-dimensional workforce analysis.                |
+
+---
+
+## 💼 How This Project Helps the Business
+
+The analysis provides HR teams with a structured way to understand employee turnover patterns.
+
+It can help businesses:
+
+* **Monitor workforce attrition** using measurable KPIs.
+* **Identify departments and roles** with different attrition patterns.
+* **Understand employee turnover across tenure groups.**
+* **Compare compensation patterns** across employees and job roles.
+* **Investigate overtime and workload-related patterns.**
+* **Segment employees** based on multiple workforce characteristics.
+* **Prioritize areas for deeper HR investigation** using data rather than relying only on assumptions.
+* **Support workforce reporting** by converting raw employee records into meaningful analytical metrics.
+
+### 🎯 Business Outcome
+
+**The project transforms raw employee data into structured HR insights that help identify where attrition is concentrated, understand workforce characteristics, and highlight employee segments that may require further investigation.**
+
+---
+
+## 🛠 Tools & Technologies
+
+* **MySQL / MariaDB** — SQL analysis, filtering, aggregation, joins, subqueries, ranking
+* **MySQL Workbench** — Query development and analysis
+* **SQL** — Business analysis and workforce segmentation
+* **GitHub** — Project documentation and version control
+
+---
+
+## 📈 SQL Skills Demonstrated
+
+**SQL Fundamentals**
+
+* `SELECT`
+* `WHERE`
+* `ORDER BY`
+* `GROUP BY`
+* `HAVING`
+* `DISTINCT`
+
+**Data Analysis**
+
+* `COUNT`
+* `SUM`
+* `AVG`
+* `MIN`
+* `MAX`
+* Conditional aggregation
+* Data segmentation
+* Percentage calculations
+
+**Advanced SQL**
+
+* `CASE WHEN`
+* Subqueries
+* Joins
+* Window functions
+* Ranking
+* Multi-condition analysis
+
+**Data Quality**
+
+* NULL-value checks
+* Duplicate checks
+* Data validation
+* Consistency checks
+
+---
+
+## 📂 Repository Structure
 
 ```text
-IBM-HR-Analytics-SQL-Project
+IBM-HR-Analytics-SQL-Project/
 │
 ├── README.md
 └── IBM_HR_Analytics.sql
+```
+
+---
+
+## 📌 Dataset
+
+**IBM HR Analytics Employee Attrition & Performance Dataset**
+
+The dataset contains employee-level information including:
+
+* Age
+* Gender
+* Department
+* Job Role
+* Monthly Income
+* Job Satisfaction
+* Job Level
+* Years at Company
+* Years in Current Role
+* Years Since Last Promotion
+* Years With Current Manager
+* Overtime
+* Business Travel
+* Education
+* Marital Status
+* Attrition
+
+---
+
+👨‍💻 About Me
+Avantika Rankhambe
+📧 rankhambeavantika@gmail.com
+
+
+
+
+
+
+
+
+
+
+
+---
+
+⭐ **If you find this project useful, consider starring the repository!**
